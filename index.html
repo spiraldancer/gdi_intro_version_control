@@ -1,0 +1,40 @@
+
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script>
+  $( document ).ready(function() {
+    var maxBottles = 99;
+
+  function countBottlesOnWall(currentBottles, maxBottle){
+var divTag = $('#bottlesonwall');
+    switch(currentBottles) {
+        case 0:
+            divTag.append('No more bottles of beer on the wall, no more bottles of beer.<br/>' +
+            'Go to the store and buy some more, ' + maxBottle + ' bottles of beer on the wall.<br/><br/>');
+            break;
+        case 1:
+            divTag.append(currentBottles + ' bottle of beer on the wall, ' + currentBottles +
+            '  bottle of beer.<br/> Take one down, pass it around, no more bottles of beer on the wall...<br/><br/>');
+            countBottlesOnWall(currentBottles-1,maxBottles);
+            break;
+        default:
+            divTag.append(currentBottles + ' bottles of beer on the wall, ' + currentBottles +
+            '  bottles of beer.<br/> Take one down, pass it around, ' + (currentBottles - 1) +
+            ' bottles of beer on the wall...<br/><br/>');
+            countBottlesOnWall(currentBottles-1,maxBottles);
+    }
+
+  }
+
+  countBottlesOnWall(maxBottles,maxBottles);
+});
+</script>
+</head>
+
+<body>
+  <div id='bottlesonwall'>
+  </div>
+</body>
+
+</html>
