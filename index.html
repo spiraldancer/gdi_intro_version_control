@@ -12,17 +12,17 @@ var divTag = $('#bottlesonwall');
     switch(currentBottles) {
         case 0:
             divTag.append('<p class="highlightcolor">No more bottles of beer on the wall, no more bottles of beer.<br/>' +
-            'Go to the store and buy some more, ' + maxBottle + ' bottles of beer on the wall.</p>');
+            'Go to the store and buy some more, ' + maxBottle + ' bottles of beer on the wall. </p>');
             break;
         case 1:
             divTag.append('<span class="highlightcolor">' + currentBottles + '</span> bottle of beer on the wall, <span class="highlightcolor">' + currentBottles +
-            '</span>  bottle of beer.<br/> Take one down, pass it around, no more bottles of beer on the wall...<br/><br/>');
+            '</span>  bottle of beer.<br/> Take one down, pass it around, no more bottles of beer on the wall... <br/><br/>');
             countBottlesOnWall(currentBottles-1,maxBottles);
             break;
         default:
             divTag.append('<span class="highlightcolor">' + currentBottles + '</span> bottles of beer on the wall, <span class="highlightcolor">' + currentBottles +
             '</span>  bottles of beer.<br/> Take one down, pass it around, <span class="highlightcolor">' + (currentBottles - 1) +
-            '</span> bottles of beer on the wall...<br/><br/>');
+            '</span> bottles of beer on the wall... <br/><br/>');
             countBottlesOnWall(currentBottles-1,maxBottles);
     }
 
