@@ -1,6 +1,7 @@
 
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script>
   $( document ).ready(function() {
@@ -10,18 +11,18 @@
 var divTag = $('#bottlesonwall');
     switch(currentBottles) {
         case 0:
-            divTag.append('No more bottles of beer on the wall, no more bottles of beer.<br/>' +
-            'Go to the store and buy some more, ' + maxBottle + ' bottles of beer on the wall.<br/><br/>');
+            divTag.append('<p class="highlightcolor">No more bottles of beer on the wall, no more bottles of beer.<br/>' +
+            'Go to the store and buy some more, ' + maxBottle + ' bottles of beer on the wall.</p>');
             break;
         case 1:
-            divTag.append(currentBottles + ' bottle of beer on the wall, ' + currentBottles +
-            '  bottle of beer.<br/> Take one down, pass it around, no more bottles of beer on the wall...<br/><br/>');
+            divTag.append('<span class="highlightcolor">' + currentBottles + '</span> bottle of beer on the wall, <span class="highlightcolor">' + currentBottles +
+            '</span>  bottle of beer.<br/> Take one down, pass it around, no more bottles of beer on the wall...<br/><br/>');
             countBottlesOnWall(currentBottles-1,maxBottles);
             break;
         default:
-            divTag.append(currentBottles + ' bottles of beer on the wall, ' + currentBottles +
-            '  bottles of beer.<br/> Take one down, pass it around, ' + (currentBottles - 1) +
-            ' bottles of beer on the wall...<br/><br/>');
+            divTag.append('<span class="highlightcolor">' + currentBottles + '</span> bottles of beer on the wall, <span class="highlightcolor">' + currentBottles +
+            '</span>  bottles of beer.<br/> Take one down, pass it around, <span class="highlightcolor">' + (currentBottles - 1) +
+            '</span> bottles of beer on the wall...<br/><br/>');
             countBottlesOnWall(currentBottles-1,maxBottles);
     }
 
